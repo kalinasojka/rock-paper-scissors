@@ -7,66 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="computer">Let's play!</button>
-    <p class="game-result"></p>
-
-    <script>
-        const computer_btn = document.querySelector('.computer');
-        const computer_output = document.querySelector('.game-result')
-        
-        const options = ['rock', 'paper', 'scissors'];
-        
-        function computerPlay() {
-            //computer throws randomly rock paper or scissors
-            let randomNumber = Math.floor(Math.random() * options.length)
-            let randomOption = options[randomNumber]
-            return randomOption
-        }
-        
-        // keeping score:
-        let userPoints = 0
-        let compPoints = 0
-
-        function gameRound(comp, user) {
-            if (comp == user) {
-                userPoints+=1
-                compPoints+=1
-            }
-            else if (user == 'paper' && comp == 'rock') {
-                userPoints+=1
-            }
-            else if (user == 'paper' && comp == 'scissors') {
-                compPoints+=1
-            }
-            else if (user == 'scissors' && comp == 'rock') {
-                compPoints+=1
-            }
-            else if (user == 'scissors' && comp == 'paper') {
-                userPoints+=1
-            }
-            else if (user == 'rock' && comp == 'paper') {
-                compPoints+=1
-            }
-            else if (user == 'rock' && comp == 'scissors') {
-                userPoints+=1
-            }
-        }
-        
-        function game(num) {
-            for (let i = 0; i<=num; i++) {
-                const playerChoice = prompt();
-                let computerChoice = computerPlay()
-                gameRound(computerChoice, playerChoice);
-                console.log(playerChoice, computerChoice);
-                console.log(`User: ${userPoints}, computer: ${compPoints}`);
-            }
-        }
-
-        game(5)
-        
-        
-        
-        
-    </script>
+    <button class="computer-btn">Let's play!</button>
+    <p class="game-result">the result is:</p>
+<script src="script.js"></script>
 </body>
 </html>
