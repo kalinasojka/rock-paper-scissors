@@ -14,9 +14,7 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection){
     let playerPoints = 0
     let compPoints = 0
-    if (playerSelection == computerSelection) {
-        break
-    }else if (playerSelection == "scissors" && computerSelection == "paper" || 
+    if (playerSelection == "scissors" && computerSelection == "paper" || 
                 playerSelection == "paper" && computerSelection == "rock" ||
                 playerSelection == "rock" && computerSelection == "scissors") {
         playerPoints = 1
@@ -25,9 +23,11 @@ function playRound(playerSelection, computerSelection){
                 playerSelection == "paper" && computerSelection == "scissors") {
         compPoints = 1
     }
-    return playerPoints, compPoints
+    console.log(`player has ${playerPoints} and computer has ${compPoints}`)
 }
 
+const computerSelection = computerPlay();
+console.log(playRound("rock", computerSelection))
 
 // function game(num) {
 //     for (let i = 0; i<=num; i++) {
